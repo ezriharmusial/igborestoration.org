@@ -1,98 +1,75 @@
 ---
 import Share from "~components/ux/Share.astro";
 import BaseLayout from "~layouts/BaseLayout.astro";
+import Form from "~components/ux/Form.astro";
+import Footer from "~components/Footer.astro";
+
+let site = "https://igborestoration.org"
 
 ---
 <BaseLayout title="Igbo Restoration Project" >
-    <section id="share-linkcast" class="aspect-video bg-cover bg-center w-full min-h-screen flex justify-center items-center pb-4 bg-black/80" style="background-image: url('https://source.unsplash.com/random?igbo');">
-        <div class="h-full">
-            <!--Nav-->
-            <div class="w-full mx-auto">
-                <div class="w-full flex items-center justify-between backdrop-brightness-50 backdrop-blur px-8">
-                    <a class="flex items-center text-red-300 drop-shadow-md no-underline hover:no-underline font-bold text-2xl lg:text-4xl" href="#">
-                        Igbo<span class="bg-clip-text text-transparent bg-gradient-to-r from-red-300 via-red-400 to-red-500"> Restoration</span><span class="text-white">.org</span>
-                    </a>
+    <section id="share-linkcast" class="aspect-video bg-cover bg-center w-full min-h-screen flex justify-center items-center pt-24 pb-8 bg-white/90" style="background-image: url('https://source.unsplash.com/random?igbo');">
+        <!--Nav-->
+        <div class="fixed top-0 left-0 w-full z-10">
+            <div class="w-full flex items-center justify-between backdrop-brightness-150 bg-white/90 backdrop-blur px-8">
+                <a class="flex items-center text-red-400 drop-shadow-md no-underline hover:no-underline font-bold text-2xl lg:text-4xl" href="#">
+                    <img class="w-14 aspect-auto mr-2" alt="Igbo Cap" src="/images/igbocap.jpg" />
+                    Igbo<span class="bg-clip-text text-transparent bg-gradient-to-r from-red-400 via-red-500 to-red-600"> Restoration</span><span class="text-black hidden landscape:block">.org</span>
+                </a>
 
-                    <div class="flex w-1/2 justify-end content-center">
-                        <a class="inline-block drop-shadow-sm text-white no-underline hover:text-red-500 hover:text-underline text-center h-10 p-2 md:h-auto md:p-4 transform hover:scale-125 duration-300 ease-in-out" href="https://twitter.com/intent/tweet?url=#">
-                            <svg class="fill-current h-6" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32">
-                                <path
-                                d="M30.063 7.313c-.813 1.125-1.75 2.125-2.875 2.938v.75c0 1.563-.188 3.125-.688 4.625a15.088 15.088 0 0 1-2.063 4.438c-.875 1.438-2 2.688-3.25 3.813a15.015 15.015 0 0 1-4.625 2.563c-1.813.688-3.75 1-5.75 1-3.25 0-6.188-.875-8.875-2.625.438.063.875.125 1.375.125 2.688 0 5.063-.875 7.188-2.5-1.25 0-2.375-.375-3.375-1.125s-1.688-1.688-2.063-2.875c.438.063.813.125 1.125.125.5 0 1-.063 1.5-.25-1.313-.25-2.438-.938-3.313-1.938a5.673 5.673 0 0 1-1.313-3.688v-.063c.813.438 1.688.688 2.625.688a5.228 5.228 0 0 1-1.875-2c-.5-.875-.688-1.813-.688-2.75 0-1.063.25-2.063.75-2.938 1.438 1.75 3.188 3.188 5.25 4.25s4.313 1.688 6.688 1.813a5.579 5.579 0 0 1 1.5-5.438c1.125-1.125 2.5-1.688 4.125-1.688s3.063.625 4.188 1.813a11.48 11.48 0 0 0 3.688-1.375c-.438 1.375-1.313 2.438-2.563 3.188 1.125-.125 2.188-.438 3.313-.875z"
-                                ></path>
-                            </svg>
-                        </a>
-                        <a
-                        class="inline-block text-white drop-shadow-sm no-underline hover:text-red-500 hover:text-underline text-center h-10 p-2 md:h-auto md:p-4 transform hover:scale-125 duration-300 ease-in-out"
-                        href="https://www.facebook.com/sharer/sharer.php?u=#"
-                        >
+                <div class="flex w-1/2 justify-end content-center">
+                    <a class="inline-block drop-shadow-sm text-black no-underline hover:text-red-500 hover:text-underline text-center h-10 p-2 md:h-auto md:p-4 transform hover:scale-125 duration-300 ease-in-out" href="https://twitter.com/intent/tweet?url=#">
                         <svg class="fill-current h-6" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32">
-                            <path d="M19 6h5V0h-5c-3.86 0-7 3.14-7 7v3H8v6h4v16h6V16h5l1-6h-6V7c0-.542.458-1 1-1z"></path>
+                            <path
+                            d="M30.063 7.313c-.813 1.125-1.75 2.125-2.875 2.938v.75c0 1.563-.188 3.125-.688 4.625a15.088 15.088 0 0 1-2.063 4.438c-.875 1.438-2 2.688-3.25 3.813a15.015 15.015 0 0 1-4.625 2.563c-1.813.688-3.75 1-5.75 1-3.25 0-6.188-.875-8.875-2.625.438.063.875.125 1.375.125 2.688 0 5.063-.875 7.188-2.5-1.25 0-2.375-.375-3.375-1.125s-1.688-1.688-2.063-2.875c.438.063.813.125 1.125.125.5 0 1-.063 1.5-.25-1.313-.25-2.438-.938-3.313-1.938a5.673 5.673 0 0 1-1.313-3.688v-.063c.813.438 1.688.688 2.625.688a5.228 5.228 0 0 1-1.875-2c-.5-.875-.688-1.813-.688-2.75 0-1.063.25-2.063.75-2.938 1.438 1.75 3.188 3.188 5.25 4.25s4.313 1.688 6.688 1.813a5.579 5.579 0 0 1 1.5-5.438c1.125-1.125 2.5-1.688 4.125-1.688s3.063.625 4.188 1.813a11.48 11.48 0 0 0 3.688-1.375c-.438 1.375-1.313 2.438-2.563 3.188 1.125-.125 2.188-.438 3.313-.875z"
+                            ></path>
                         </svg>
                     </a>
-                </div>
+                    <a
+                    class="inline-block text-black drop-shadow-sm no-underline hover:text-red-500 hover:text-underline text-center h-10 p-2 md:h-auto md:p-4 transform hover:scale-125 duration-300 ease-in-out"
+                    href={"https://www.facebook.com/sharer/sharer.php?u=" + site}
+                    >
+                    <svg class="fill-current h-6" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32">
+                        <path d="M19 6h5V0h-5c-3.86 0-7 3.14-7 7v3H8v6h4v16h6V16h5l1-6h-6V7c0-.542.458-1 1-1z"></path>
+                    </svg>
+                </a>
             </div>
         </div>
+    </div>
 
-        <!--Main-->
-        <div class="container p-8 pt-24 md:pt-36 mx-auto flex flex-wrap flex-col portrait:flex-col-reverse landscape:md:flex-row gap-8 items-center">
-            <!--Left Col-->
-            <div class="flex flex-col landscape:w-full landscape:xl:w-2/5 justify-center lg:items-start overflow-y-hidden backdrop-brightness-50 backdrop-blur p-8 rounded-md">
-                <h1 class="my-4 text-3xl md:text-5xl text-white drop-shadow-sm font-bold leading-tight text-center md:text-left">
-                    Nnọọ!
-                    <span class="bg-clip-text text-transparent bg-gradient-to-r from-red-300 via-red-400 to-red-500">
-                        Igbo Restoration
-                    </span>
-                    website is launched!
-                </h1>
-                <p class="leading-normal text-white md:text-2xl mb-8 text-center md:text-left">
-                    Want to stay updated? Please sign up for our newsletter or join our <a class="text-lime-300" title="Join our Whatsapp Group" href="https://chat.whatsapp.com/DZoimK4izJDAV9dZpPy2Qz">Whatsapp Group IRI</a>!
-                </p>
-
-                <form class="bg-red-700 w-full shadow-lg rounded-lg px-8 pt-6 pb-8 mb-4" netlify enctype="multipart/form-data"  data-netlify="true" data-netlify-honeypot="field-of-expertise" name="enyimba-aba-2024" method="POST">
-                    <div class="mb-4">
-                        <label class="block text-white py-2 font-bold mb-2" for="emailaddress">
-                            Signup for our newsletter
-                        </label>
-                        <input
-                        class="shadow appearance-none border rounded w-full p-3 text-gray-700 leading-tight focus:ring transform transition hover:scale-105 duration-300 ease-in-out"
-                        id="emailaddress"
-                        name="emailaddress"
-                        type="email"
-                        placeholder="you@somewhere.com"
-                        />
-                        <input
-                        class="shadow appearance-none border rounded w-full p-3 text-gray-700 leading-tight focus:ring transform transition hover:scale-105 duration-300 ease-in-out hidden"
-                        id="field-of-expertise"
-                        name="field-of-expertise"
-                        type="text"
-                        placeholder="your occupation"
-                        />
-                    </div>
-
-                    <div class="flex items-center justify-between pt-4">
-                        <button
-                        class="bg-gradient-to-r from-red-50 to-red-100 hover:from-red-300 hover:to-red-400 hover:text-white text-red-700 font-bold py-2 px-4 rounded focus:ring transform transition hover:scale-105 duration-300 ease-in-out"
-                        type="submit"
-                        >Sign Up</button>
-                    </div>
-                </form>
-            </div>
-
-            <!--Right Col-->
-            <div class="w-full xl:w-3/5 p-12 overflow-hidden">
-
-            </div>
+    <!--Main-->
+    <div class="container p-4 landscape:p-8 pt-24 md:pt-36 mx-auto flex flex-wrap flex-col portrait:flex-col-reverse landscape:md:flex-row gap-8 items-center">
+        <!--Left Col-->
+        <div class="flex flex-col landscape:w-full landscape:xl:w-2/5 justify-center lg:items-start overflow-y-hidden backdrop-brightness-150 bg-white/80 backdrop-blur p-4 landscape:p-8 rounded-md">
+            <h1 class="my-4 text-3xl md:text-5xl text-black drop-shadow-sm font-bold leading-tight text-center md:text-left">
+                Nnọọ!
+                <span class="bg-clip-text text-transparent bg-gradient-to-r from-red-400 via-red-500 to-red-600">
+                    Igbo Restoration
+                </span>
+                website is launched!
+            </h1>
+            <p class="leading-normal text-black md:text-2xl mb-8 text-center md:text-left">
+                Want to stay updated? Please sign up for our newsletter or join our <a class="text-lime-600" title="Join our Whatsapp Group" href="https://chat.whatsapp.com/DZoimK4izJDAV9dZpPy2Qz">Whatsapp Group IRI</a>!
+            </p>
+            <Form />
         </div>
 
-        <div class="mx-auto md:pt-16 lg:w-1/2">
-            <div
-            class="block rounded-lg bg-white drop-shadow-sm shadow-secondary-1 dark:bg-surface-dark mx-auto w-full md:w-4/5 transform -rotate-1 transition hover:scale-105 duration-700 ease-in-out hover:rotate-1">
-            <div
-            class="relative overflow-hidden bg-cover bg-no-repeat"
-            data-twe-ripple-init
-            data-twe-ripple-color="light">
+        <!--Right Col-->
+        <div class="w-full xl:w-3/5 p-12 overflow-hidden">
+
+        </div>
+    </div>
+</section>
+
+<div class="mx-auto landscape:lg:container w-screen p-8 landscape:md:pt-16">
+            <h2 class="mb-2 text-3xl font-bold text-center leading-tight mb-8 portrait:hidden">
+                <span class="bg-clip-text text-transparent bg-gradient-to-r from-red-400 via-red-500 to-red-600">
+                    IGBO RESTORATION
+                </span>  INITIATIVES (IRI)</h2>
+    <div class="block landscape:lg:flex gap-8 rounded-lg bg-white drop-shadow-sm shadow-secondary-1 dark:bg-surface-dark mx-auto w-full md:w-4/5 transform -rotate-1 transition hover:scale-105 duration-700 ease-in-out hover:rotate-0">
+        <div class="landscape:lg:gw-2/5 relative overflow-hidden bg-cover bg-no-repeat" data-twe-ripple-init data-twe-ripple-color="light">
             <img
-            class="rounded-t-lg w-full"
+            class="rounded-t-lg aspect-video w-full"
             src="/images/igborestoration.jpg"
             alt="" />
             <a href="#!">
@@ -100,36 +77,36 @@ import BaseLayout from "~layouts/BaseLayout.astro";
                 class="absolute bottom-0 left-0 right-0 top-0 h-full w-full overflow-hidden bg-[hsla(0,0%,98%,0.15)] bg-fixed opacity-0 transition duration-300 ease-in-out hover:opacity-100"></div>
             </a>
         </div>
-        <div class="p-6 text-surface dark:text-white">
-            <h5 class="mb-2 text-xl font-medium leading-tight">IGBO RESTORATION INITIATIVES (IRI)</h5>
-            <p class="mb-4 text-base">
-                Greetings to Umu Ndi-Gbo. Udo'nu!
-            </p>
-            <p class="mb-4 text-base">
-                Granted, quite a lot of our original Igbo heritages were either disfigured, destroyed, plagiarised, whitewashed or completely changed.
-            </p>
-            <p class="mb-4 text-base">
-                From our True Igbo Histories to our Igbo Lunar Calendar; to Igbo CULTure (Odi'n'Ala); to Igbo Family structure; to Igbo spiritualities (Nso'Ala, Iwu'Ala and Ntu'Ala); to the rightful position of Igbo women in Igbo societies; from Igbo language to Igbo dressings ,(Ishi Agu vs Ishi Odum), Traditional Igbo foods and drinks, Nka'n'Uzu Igbo, Igbo Village Waters and Ancient Igbo Agriculture.
-                Indeed, lot of damages have been done against our precious Igboness by our enslavers and colonists.
-            </p>
-            <p class="mb-4 text-base">
-                The time to restore the glories and greatness of Igbo people and their natural endowments and heritages is now.
-            </p>
-            <p class="mb-4 text-base">
-                Igbo Restoration Initiatives (IRI) was established to practically tackle and restore all that made us Igbo people.
-            </p>
-            <p class="mb-4 text-base">
-                Welcome Igbo Restoration Initiatives (IRI) with change in focus.
-            </p>
-            <p class="mb-4 text-base">
-                Signed<br />
-                IRI Board of Directors.
-            </p>
+        <div class="landscape:lg:w-3/5 text-surface dark:text-black">
+            <h2 class="mb-2 text-3xl font-bold leading-tight landscape:hidden">
+                <span class="bg-clip-text text-transparent bg-gradient-to-r from-red-400 via-red-500 to-red-600">
+                    IGBO RESTORATION
+                </span>  INITIATIVES (IRI)</h2>
+                <p class="mb-4 font-medium text-xl text-base">
+                    Greetings to Umu Ndi-Gbo. Udo'nu!
+                </p>
+                <p class="mb-4 font-medium text-xl text-base">
+                    Granted, quite a lot of our original Igbo heritages were either disfigured, destroyed, plagiarised, whitewashed or completely changed.
+                </p>
+                <p class="mb-4 text-base">
+                    From our True Igbo Histories to our Igbo Lunar Calendar; to Igbo CULTure (Odi'n'Ala); to Igbo Family structure; to Igbo spiritualities (Nso'Ala, Iwu'Ala and Ntu'Ala); to the rightful position of Igbo women in Igbo societies; from Igbo language to Igbo dressings ,(Ishi Agu vs Ishi Odum), Traditional Igbo foods and drinks, Nka'n'Uzu Igbo, Igbo Village Waters and Ancient Igbo Agriculture.
+                    Indeed, lot of damages have been done against our precious Igboness by our enslavers and colonists.
+                </p>
+                <p class="mb-4 text-base">
+                    The time to restore the glories and greatness of Igbo people and their natural endowments and heritages is now.
+                </p>
+                <p class="mb-4 text-base">
+                    Igbo Restoration Initiatives (IRI) was established to practically tackle and restore all that made us Igbo people.
+                </p>
+                <p class="mb-4 text-base">
+                    Welcome Igbo Restoration Initiatives (IRI) with change in focus.
+                </p>
+                <p class="mb-4 text-base">
+                    Signed<br />
+                    IRI Board of Directors.
+                </p>
+            </div>
         </div>
     </div>
-
-    <!--Footer-->
-</div>
-</div>
-</section>
+    <Footer />
 </BaseLayout>
