@@ -7,7 +7,7 @@ projects:
   - natural-heritge-restorations
 title: Ohia Restoration
 subtitle: An Eco- / Cultural Restoration Project
-image: /uploads/initiatives/1000043489.jpg
+image: /uploads/projects/1000043489.jpg
 startDate: 2024-04-04T11:11:11.491Z
 endDate: 2024-04-04T11:11:11.491Z
 goal: 500000
@@ -15,7 +15,7 @@ tags:
   - permaculture
   - eco tourism
 images:
-  - /uploads/initiatives/aba-town-hall.png
+  - /uploads/projects/aba-town-hall.png
 date: 2024-03-21T21:11:39.492Z
 seo:
   imageAlt: Ohia Restoration Project aims to Restore the Ecological, and
@@ -34,7 +34,7 @@ After conducting a copious inspection and witnessing the heart-warming commissio
 Let's introduce the various phases of Ohia Owerre-Nkworji Restoration Project implementation.
 
 ### PROJECT PHASES
-* Inspection: Led by Eze's cabinet members on the 3rd of April 2024, ArtKids envoy Mr. Ezri D. Harmusial was shown around and introduced to Ohia Owerre-Nkworji so as to access the present condition of Owerre-Nkworji's only spring water. Ohia. The inspection was professionally video recorded for documentation sake.
+* Inspection: Led by Eze's cabinet members on the 3rd of April 2024, Igbo Restoration envoy Mr. Ezri D. Harmusial was shown around and introduced to Ohia Owerre-Nkworji so as to access the present condition of Owerre-Nkworji's only spring water. Ohia. The inspection was professionally video recorded for documentation sake.
 
 * Commissioning: On the 13th of April 2024, HRH. Eze Boniface Unogu (Ishigbo I) of Owerre-Nkworji and his cabinet members visited and honoured Ohia Owerre-Nkworji which was followed by the commissioning of the project as he authorised Igbo Restoration Holland to genuinely and unconditionally restore the glories and values of Ohia Owerre-Nkworji Stream. This event was not only video-recorded but was also Drone-captured. Using drone, Igbo Restoration Holland was able to capture a global view of Ohia Stream and her environs.
 

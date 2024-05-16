@@ -1,0 +1,106 @@
+---
+import { Image } from "astro:assets";
+import Icon from 'astro-icon'
+export let sectionClass = "w-1/2";
+---
+	<h3 class="marker title my-4">BoardMembers</h3>
+	<div class="grid grid-cols-2 portrait:grid-cols-1 gap-4">
+		<div class="card overflow-hidden rounded-xl bg-[hsla(0,0%,100%,0.8)] shadow-[0_2px_15px_-3px_rgba(0,0,0,0.07),0_10px_20px_-2px_rgba(0,0,0,0.04)] dark:bg-[hsla(0,0%,5%,0.7)] dark:shadow-black/20 backdrop-blur-[30px]">
+			<div class="aspect-video overflow-hidden">
+			<img class="aspect-auto" loading="lazy" src="https://source.unsplash.com/random?ICT"
+			alt="Ezri's Wallpaper Picture"
+			width={640}
+			aspectRatio={16/9} class="w-full m-0 aspect-video" style="background-color:#779aa8;" />
+			</div>
+			<div class="flex justify-center -mt-8">
+				<img class="w-24 rounded-full" src="/images/contacts/Ezri_0.jpg" alt="Profielfoto Ezri" class="-mt-3" />
+			</div>
+			<div class="text-center px-3 pb-6 pt-2">
+				<h4 class="text-sm">Ezri D. Harmusial</h4>
+				<p class="text-sm">Secretary & Director of International Business</p>
+				<p class="mt-2 ">
+					e: <a href="mailto:international@igborestoration.org"
+					class="text-secondary"
+					title="Email Ezri Harmusial">international@igborestoration.org</a>
+					<br>
+					t: <a
+					class="text-secondary"
+					href="tel:+31(0)6 285 86 335" title="Call Ezri Harmusial">+31(0)6 285 86 335</a>
+				</p>
+			</div>
+			<div class="flex justify-center gap=4 pb-3 text 2xl">
+				<a class="btn m-2" target="_blank" href="https://www.facebook.com/ezriharmusial">
+					<Icon pack="fa" name="facebook-official" />
+				</a>
+				<a class="btn m-2" target="_blank" href="https://nl.linkedin.com/in/ezri-harmusial">
+					<Icon pack="fa" name="linkedin" />
+				</a>
+				<a class="btn m-2" target="_blank" href="https://twitter.com/ezriharmusial">
+					<Icon pack="fa" name="twitter" />
+				</a>
+			</div>
+		</div>
+	</div>
+	<h3 class="marker title my-4">Profesional Advisors</h3>
+	<div class="grid grid-cols-2 portrait:grid-cols-1 gap-4">
+		<div class="card overflow-hidden rounded-xl bg-[hsla(0,0%,100%,0.8)] shadow-[0_2px_15px_-3px_rgba(0,0,0,0.07),0_10px_20px_-2px_rgba(0,0,0,0.04)] dark:bg-[hsla(0,0%,5%,0.7)] dark:shadow-black/20 backdrop-blur-[30px]">
+			<img src="/images/contacts/Ezehk-2.jpg" class="w-full m-0 aspect-video"
+			loading="lazy"
+			alt="Ezekwesiri's Wallpaper Picture"
+			width={640}
+			aspectRatio={16/9} />
+			<div class="flex justify-center -mt-8">
+				<img class="w-24 rounded-full" src="/images/contacts/Ezehk-1-7090-150x150.jpg" alt="Ezekwesiri's Wallpaper Picture" class="-mt-3" />
+			</div>
+			<div class="text-center px-3 pb-6 pt-2">
+				<h4 class="text-sm">Eng. Ezekwesiri E. Obioha</h4>
+				<p class="text-sm">CEO: Igbo Restoration</p>
+				<p class="mt-2 ">
+					e: <a href="mailto:info@igborestoration.org"
+					class="has-text-secondary"
+					title="Email Eng. Ezekwesiri E. Obioha">info@igborestoration.org</a>
+					<br>
+					t: <a href="tel:+234 916 060 2716"
+					class="has-text-secondary"
+					title="Call Eng. Ezekwesiri E. Obioha ">+234 916 060 2716</a>
+				</p>
+			</div>
+			<div class="flex justify-center gap=4 pb-3 text 2xl">
+				<a class="btn m-2" target="_blank" href="https://www.facebook.com/profile.php?id=100015798102483">
+					<Icon pack="fa" name="facebook-official" />
+				</a>
+				<a class="btn m-2" target="_blank" href="https://www.linkedin.com/pub/engr-obioha-ezekwesiri-ict/2b/ab6/421">
+					<Icon pack="fa" name="linkedin" />
+				</a>
+				<a class="btn m-2" target="_blank" href="https://twitter.com/ObiohaEzekwesir">
+					<Icon pack="fa" name="twitter" />
+				</a>
+			</div>
+		</div>
+
+
+		<div class="hidden card overflow-hidden rounded-xl bg-[hsla(0,0%,100%,0.8)] shadow-[0_2px_15px_-3px_rgba(0,0,0,0.07),0_10px_20px_-2px_rgba(0,0,0,0.04)] dark:bg-[hsla(0,0%,5%,0.7)] dark:shadow-black/20 backdrop-blur-[30px]">
+			<img loading="lazy" src="/images/contacts/Biblequotes-Facebook-Shared-Image-Rastered-2-343x180.jpg"
+			alt="Chibundu's Wallpaper"
+			width={640}
+			aspectRatio={16/9} class="w-full m-0 aspect-video" style="background-color:#635c57;" />
+			<div class="flex justify-center -mt-8">
+				<img class="w-24 rounded-full" src="/images/contacts/chibundu_mmeri_victory.jpg" alt="Profielfoto Chibundu" class="-mt-3" />
+			</div>
+			<div class="text-center px-3 pb-6 pt-2">
+				<h4 class="text-sm">Chibundu Mmeri Obioha</h4>
+				<p class="text-sm">Director: Igbo Restoration Africa</p>
+				<p class="mt-2 ">
+					e: <a href="mailto:africa@igborestoration.org"
+					class="text-secondary"
+					title="Email Chibundu Mmeri Obioha">africa@igborestoration.org</a>
+					<br>
+					t: <a href="tel:+234 (0)81 484 874 27"
+					class="text-secondary"
+					title="Call Chibundu Mmeri Victory">+234 (0)81 484 874 27</a>
+				</p>
+			</div>
+			<div class="flex justify-center gap=4 pb-3 text 2xl">
+			</div>
+		</div>
+	</div>

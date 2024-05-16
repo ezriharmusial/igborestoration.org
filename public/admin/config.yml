@@ -54,6 +54,34 @@ collections:
           - {label: "Youtube Url", name: youtube, required: false}
           - {label: "LinkedIn Url", name: linkedin, required: false}
 
+  - name: "partners"
+    label: "Partners"
+    label_singular: "Partner"
+    folder: "src/content/partners/"
+    preview_path: "/en/partners/{{name}}"
+    summary: "{{name}} [{{type}}]"
+    editor:
+      preview: false
+    identifier_field: name
+    create: true
+    fields:
+      - {label: "Datum", name: "date", widget: "datetime", required: true, hidden: true}
+      - {label: "Type", name: "type", widget: "select", options: ["individual", "group", "company", "ngo", "governmental institution", "school"], default: "individual"}
+      - {label: "Naam", name: "name", widget: "string"}
+      - {label: "Profielfoto", name: "image", widget: "image", media_folder: "/public/uploads/pages", public_folder: "/uploads/pages", default: /logo-192x192.png }
+      - {label: "Shortbio", name: "body", widget: "markdown"}
+      - label: "Contact Info"
+        name: "contact"
+        widget: "object"
+        collapsed: true
+        fields:
+          - {label: "Contactpersoon", name: contactpersoon, required: false}
+          - {label: "Telefoon", name: telephone, required: false}
+          - {label: "Email", name: email, required: false}
+          - {label: "Website", name: website, required: false}
+
+
+
   - name: "pages"
     label: "Paginas"
     label_singular: "Pagina"
@@ -70,7 +98,7 @@ collections:
       - {label: "SubTitle", name: "subtitle", widget: "string", required: false, i18n: true}
       - {label: "Foto", name: "image", widget: "image", media_folder: "/public/uploads/pages", public_folder: "/uploads/pages", required: false, i81n: duplicate}
       - {label: "Inhoud", name: "body", widget: "markdown", i18n: true}
-      - {label: "Tags (SEO)", name: "tags", widget: "list", default: ["artkids"], required: false, i18n: true}
+      - {label: "Tags (SEO)", name: "tags", widget: "list", default: ["restoration"], required: false, i18n: true}
       - label: "Search Engine Optimization"
         name: "seo"
         widget: "object"

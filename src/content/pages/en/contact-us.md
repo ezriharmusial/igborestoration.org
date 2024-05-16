@@ -11,6 +11,6 @@ status: "published"
 tags: []
 ---
 
-### Contacting ArtKids digitally connected
+### Contacting Igbo Restoration digitally connected
 
 Allthough we would love to settle down, and have a permanent accomodation for both our Working Office and our Art Gallery. Our Foundation has for now been on the road and in transit to this destination. To stay connected, we use internet as our head office in cyberspace. You can always approach us digitally. Feel free to contact us to see if we can help you.
