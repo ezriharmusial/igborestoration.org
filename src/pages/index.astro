@@ -7,7 +7,7 @@ import BaseLayout from "~layouts/BaseLayout.astro";
     <section id="share-linkcast" class="aspect-video bg-cover bg-center w-full min-h-screen flex justify-center items-center pb-4 bg-black/80" style="background-image: url('https://source.unsplash.com/random?igbo');">
         <div class="h-full">
             <!--Nav-->
-            <div class="w-full container mx-auto">
+            <div class="w-full container mx-auto portrait:bg-black/20">
                 <div class="w-full flex items-center justify-between">
                     <a class="flex items-center text-red-400 drop-shadow-md no-underline hover:no-underline font-bold text-2xl lg:text-4xl" href="#">
                         Igbo<span class="bg-clip-text text-transparent bg-gradient-to-r from-red-400 via-red-600 to-red-700"> Restoration</span><span class="text-white">.org</span>
@@ -34,9 +34,9 @@ import BaseLayout from "~layouts/BaseLayout.astro";
         </div>
 
         <!--Main-->
-        <div class="container pt-24 md:pt-36 mx-auto flex flex-wrap flex-col md:flex-row items-center">
+        <div class="container pt-24 md:pt-36 mx-auto flex flex-wrap flex-col gap-8 md:flex-row items-center">
             <!--Left Col-->
-            <div class="flex flex-col landscape:w-full landscape:xl:w-2/5 justify-center lg:items-start overflow-y-hidden bg-black/40 p-8 m-8 portrait:m-4 rounded-md">
+            <div class="flex flex-col landscape:w-full landscape:xl:w-2/5 justify-center lg:items-start overflow-y-hidden bg-black/40 p-8  portrait:m-4 rounded-md">
                 <h1 class="my-4 text-3xl md:text-5xl text-white drop-shadow-sm font-bold leading-tight text-center md:text-left">
                     Nnọọ!
                     <span class="bg-clip-text text-transparent bg-gradient-to-r from-red-400 via-red-600 to-red-700">
@@ -45,7 +45,7 @@ import BaseLayout from "~layouts/BaseLayout.astro";
                     website is under construction!
                 </h1>
                 <p class="leading-normal text-white md:text-2xl mb-8 text-center md:text-left">
-                    Want to stay updated? Please sign in for our newsletter or join our <a class="text-lime-300" title="Join our Whatsapp Group" href="https://chat.whatsapp.com/DZoimK4izJDAV9dZpPy2Qz">Whatsapp Group IRI</a>!
+                    Want to stay updated? Please sign up for our newsletter or join our <a class="text-lime-300" title="Join our Whatsapp Group" href="https://chat.whatsapp.com/DZoimK4izJDAV9dZpPy2Qz">Whatsapp Group IRI</a>!
                 </p>
 
                 <form class="bg-red-700 w-full shadow-lg rounded-lg px-8 pt-6 pb-8 mb-4" netlify enctype="multipart/form-data"  data-netlify="true" data-netlify-honeypot="field-of-expertise" name="enyimba-aba-2024" method="POST">
@@ -64,7 +64,7 @@ import BaseLayout from "~layouts/BaseLayout.astro";
                     <div class="flex items-center justify-between pt-4">
                         <button
                         class="bg-gradient-to-r from-red-50 to-red-100 hover:from-red-300 hover:to-red-400 hover:text-white text-red-700 font-bold py-2 px-4 rounded focus:ring transform transition hover:scale-105 duration-300 ease-in-out"
-                        type="button"
+                        type="submit"
                         >
                         Sign Up
                     </button>
@@ -75,7 +75,7 @@ import BaseLayout from "~layouts/BaseLayout.astro";
         <!--Right Col-->
         <div class="w-full xl:w-3/5 p-12 overflow-hidden">
             <div
-            class="block rounded-lg bg-white drop-shadow-sm shadow-secondary-1 dark:bg-surface-dark mx-auto w-full md:w-4/5 transform -rotate-2 transition hover:scale-105 duration-700 ease-in-out hover:rotate-2">
+            class="block rounded-lg bg-white drop-shadow-sm shadow-secondary-1 dark:bg-surface-dark mx-auto w-full md:w-4/5 transform -rotate-1 transition hover:scale-105 duration-700 ease-in-out hover:rotate-1">
             <div
             class="relative overflow-hidden bg-cover bg-no-repeat"
             data-twe-ripple-init
