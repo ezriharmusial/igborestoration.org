@@ -45,14 +45,14 @@ const url = "https://igborestoration.org" + Astro.url.pathname
 
 <section id="share-linkcast" class="aspect-video bg-cover bg-center w-full min-h-screen flex justify-center items-center pt-20 pb-24 bg-white/90" style="background-image: url('https://source.unsplash.com/random?igbos');">
   <div class="card bg-white rounded-lg landscape:w-1/2 p-8 landscape:mx-auto portrait:mt-96 portrait:mx-4">
-    <h4 class="unstyled text-red-300">Sharing is Caring and helps to get our Stories out.</h4>
-    <h3 class="title unstyled font-bold uppercase text-3xl pb-6">
+    <h4 class="unstyled text-red-300 text-lg pb-2">Sharing is Caring and helps to get our Stories out.</h4>
+    <h3 class="title unstyled font-bold uppercase text-3xl pb-4">
       <span class="bg-clip-text text-transparent bg-gradient-to-r from-red-400 via-red-500 to-red-600">
       { locale[lang].share_this } page
       </span>
     </h3>
 
-    <p class="text-xl portrait:p-4 pb-8">If you Like what we do, please Share our stories online on your Favorite Digital Networks. We Greatly Appreciate!</p>
+    <p class="text-xl pb-8">If you Like what we do, please Share our stories online on your Favorite Digital Networks. We Greatly Appreciate!</p>
     {!isMobile ?
 
       <div class="flex rounded-lg overflow-hidden !text-white variant-ringed h-12">
