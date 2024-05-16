@@ -11,7 +11,7 @@ i18n:
   structure: multiple_folders
 
   # Required - a list of locales to show in the editor UI
-  locales: [en, nl]
+  locales: [en, ig]
 
   # Optional, defaults to the first item in locales.
   # The locale to be used for fields validation and as a baseline for the entry.
@@ -65,7 +65,7 @@ collections:
       - {label: "Pubilcatie Datum", name: "date", widget: "datetime", i18n: duplicate}
       - {label: "Status", name: "status", widget: "select", options: ['published', 'archived'], required: false}
       - {label: "Auteur", name: author, widget: "relation", collection: "staff", value_field: "{{slug}}", display_fields: ["name", "title"], search_fields: ["name", "username", title ], multiple: false, i18n: duplicate}
-      - {label: "Category", name: "category", widget: "select", options: ["about artkids", "organization", "anbi", "funding"], required: false}
+      - {label: "Category", name: "category", widget: "select", options: ["subjects"], required: false}
       - {label: "Titel", name: "title", widget: "string", i18n: true}
       - {label: "SubTitle", name: "subtitle", widget: "string", required: false, i18n: true}
       - {label: "Foto", name: "image", widget: "image", media_folder: "/public/uploads/pages", public_folder: "/uploads/pages", required: false, i81n: duplicate}

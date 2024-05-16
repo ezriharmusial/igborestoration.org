@@ -1,0 +1,96 @@
+---
+import BaseLayout from "~layouts/BaseLayout.astro";
+import Form from "~components/ux/Form.astro";
+import Nav from "~components/ux/Nav.astro";
+
+import { getLangFromUrl, useTranslations } from '~content/i18n/utils';
+
+let site = "https://igborestoration.org"
+
+const lang = getLangFromUrl(Astro.url)
+
+export async function getStaticPaths() {
+    return [
+    { params: { lang: 'en' } },
+    { params: { lang: 'nl' } },
+    ];
+}
+
+
+---
+<BaseLayout title="Igbo Restoration Project" >
+    <section id="landing" class="aspect-video bg-cover bg-center w-full min-h-screen flex justify-center items-center pt-32 pb-24 bg-white/90" style="background-image: url('https://source.unsplash.com/random?igbo');">
+        <!--Nav-->
+        <Nav />
+        <!--Main-->
+        <div class="container p-4 landscape:p-8 pt-24 md:pt-36 mx-auto flex flex-wrap flex-col portrait:flex-col-reverse landscape:md:flex-row gap-8 items-center">
+            <!--Left Col-->
+            <div class="flex flex-col landscape:w-full landscape:xl:w-2/5 justify-center lg:items-start overflow-y-hidden backdrop-brightness-150 bg-white/80 backdrop-blur p-4 landscape:p-8 rounded-md">
+                <h1 class="my-4 text-3xl md:text-5xl text-black drop-shadow-sm font-bold leading-tight text-center md:text-left">
+                    Nnọọ,
+                    <span class="bg-clip-text text-transparent bg-gradient-to-r from-red-400 via-red-500 to-red-600">
+                        Igbo Restoration
+                    </span>
+                    website is launched!
+                </h1>
+                <p class="leading-normal text-black md:text-2xl mb-8 text-center md:text-left">
+                    Want to stay updated? Please sign up for our newsletter or join our <a class="text-lime-600" title="Join our Whatsapp Group" href="https://chat.whatsapp.com/DZoimK4izJDAV9dZpPy2Qz">Whatsapp Group IRI</a>!
+                </p>
+                <Form />
+            </div>
+
+            <!--Right Col-->
+            <div class="w-full xl:w-3/5 p-12 overflow-hidden">
+
+            </div>
+        </div>
+    </section>
+
+    <div class="mx-auto landscape:lg:container w-screen p-8 landscape:md:pt-16">
+        <h2 class="mb-2 text-3xl font-bold text-center leading-tight mb-8 portrait:hidden">
+            <span class="bg-clip-text text-transparent bg-gradient-to-r from-red-400 via-red-500 to-red-600">
+                IGBO RESTORATION
+            </span>  INITIATIVES (IRI)</h2>
+            <div class="block landscape:lg:flex gap-8 rounded-lg bg-white drop-shadow-sm shadow-secondary-1 dark:bg-surface-dark mx-auto w-full md:w-4/5 transform -rotate-1 transition hover:scale-105 duration-700 ease-in-out hover:rotate-0">
+                <div class="landscape:lg:gw-2/5 relative overflow-hidden bg-cover bg-no-repeat" data-twe-ripple-init data-twe-ripple-color="light">
+                    <img
+                    class="rounded-t-lg aspect-video w-full"
+                    src="/images/igborestoration.jpg"
+                    alt="" />
+                    <a href="#!">
+                        <div
+                        class="absolute bottom-0 left-0 right-0 top-0 h-full w-full overflow-hidden bg-[hsla(0,0%,98%,0.15)] bg-fixed opacity-0 transition duration-300 ease-in-out hover:opacity-100"></div>
+                    </a>
+                </div>
+                <div class="landscape:lg:w-3/5 text-surface dark:text-black">
+                    <h2 class="mb-2 text-3xl font-bold leading-tight landscape:hidden">
+                        <span class="bg-clip-text text-transparent bg-gradient-to-r from-red-400 via-red-500 to-red-600">
+                            IGBO RESTORATION
+                        </span>  INITIATIVES (IRI)</h2>
+                        <p class="mb-4 font-medium text-xl text-base">
+                            Greetings to Umu Ndi-Gbo. Udo'nu!
+                        </p>
+                        <p class="mb-4 font-medium text-xl text-base">
+                            Granted, quite a lot of our original Igbo heritages were either disfigured, destroyed, plagiarised, whitewashed or completely changed.
+                        </p>
+                        <p class="mb-4 text-base">
+                            From our True Igbo Histories to our Igbo Lunar Calendar; to Igbo CULTure (Odi'n'Ala); to Igbo Family structure; to Igbo spiritualities (Nso'Ala, Iwu'Ala and Ntu'Ala); to the rightful position of Igbo women in Igbo societies; from Igbo language to Igbo dressings ,(Ishi Agu vs Ishi Odum), Traditional Igbo foods and drinks, Nka'n'Uzu Igbo, Igbo Village Waters and Ancient Igbo Agriculture.
+                            Indeed, lot of damages have been done against our precious Igboness by our enslavers and colonists.
+                        </p>
+                        <p class="mb-4 text-base">
+                            The time to restore the glories and greatness of Igbo people and their natural endowments and heritages is now.
+                        </p>
+                        <p class="mb-4 text-base">
+                            Igbo Restoration Initiatives (IRI) was established to practically tackle and restore all that made us Igbo people.
+                        </p>
+                        <p class="mb-4 text-base">
+                            Welcome Igbo Restoration Initiatives (IRI) with change in focus.
+                        </p>
+                        <p class="mb-4 text-base">
+                            Signed<br />
+                            IRI Board of Directors.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </BaseLayout>

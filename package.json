@@ -33,6 +33,8 @@
   "devDependencies": {
     "@astrojs/react": "^3.0.5",
     "@tailwindcss/typography": "^0.5.9",
-    "autoprefixer": "^10.4.14"
+    "autoprefixer": "^10.4.14",
+    "svelte-lightbox": "^1.1.2",
+    "svelte-pdf": "^1.0.20"
   }
 }

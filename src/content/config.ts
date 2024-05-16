@@ -72,7 +72,7 @@ const linkcasts = defineCollection({
     })
 });
 
-const initiatives = defineCollection({
+const projects = defineCollection({
     type: 'content',
     schema: z.object({
         initiator: z.array(reference('partners')),
@@ -101,4 +101,4 @@ const initiatives = defineCollection({
     })
 });
 
-export const collections = { pages }
+export const collections = { pages, staff, projects }
