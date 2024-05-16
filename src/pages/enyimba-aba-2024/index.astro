@@ -1,0 +1,113 @@
+---
+import { getCollection, getEntryBySlug } from 'astro:content';
+import BaseLayout from "@layouts/BaseLayout.astro";
+import { Image } from 'astro:assets';
+import { Lightbox } from 'svelte-lightbox';
+import Artists from '~components/artists/Artists.astro';
+import FormDiscoverMeParticipants from '~components/forms/FormDiscoverMeParticipants.astro';
+
+// 1. Get the slug from the incoming server request
+// const { initiative } = await getEntryBySlug('initiatives', 'en/enyimbaaba-2024');
+const initiative = await getEntryBySlug('initiatives', 'en/enyimbaaba-2024')
+// 2. Query for the page directly using the request slug
+const { Content } = await initiative?.render() ;
+// console.log('<<<< INITIATIVES >>>>:',initiative.data)
+const [lang, slug] = initiative.slug.split('/')
+const partners = await getCollection('partners').then(partners => partners?.filter(p => p.slug === (initiative.data?.initiator[0].slug)))
+
+const project = await getEntryBySlug('projects', initiative.slug.split('/')[0] + '/' + initiative.data?.projects[0])
+
+---
+<BaseLayout icon={initiative.data?.icon ? initiative.data?.icon : project?.data?.icon} pack={initiative.data?.pack ? initiative.data?.pack : project?.data?.pack} description={initiative.data?.seo?.imageAlt || project?.data?.description} seoTitle={"ArtKids - " + project?.data?.title + " - " + initiative.data?.title} title={project?.data?.title} shortTitle={initiative.data?.shortTitle ? initiative.data?.shortTitle : project?.data?.shortTitle} image={initiative.data?.image} imageAlt={initiative.data?.imageAlt}>
+	<!-- Section Started Heading -->
+	<div class="section section-inner started-heading">
+		<div class="aspect-video bg-cover bg-center w-full h-full transition-all duration-100 flex justify-start items-end p-8 bg-black/80" style={"background-image: url('" +  initiative.data?.image + "');"}>
+			<!-- titles -->
+			<div class="portrait:hidden landscape:sm:hidden landscape:md:block h-titles card rounded-xl p-4 landscape:max-w-xl mix-blend-differnce backdrop-blur bg-white/75 dark:bg-black/70 ">
+				{initiative?.data.subtitle &&
+					<h3 class="text-red-600 unstyled drop-shadow text-lg font-bold" >{initiative?.data.subtitle}</h3>
+				}
+				<h2 class="marker text-primary-900-50 mb-4 unstyled drop-shadow landscape:text-xl landscape:xl:text-4xl portrait:text-2xl font-bold" >{project?.data?.title + " - " + initiative.data?.title}</h2>
+				<p>Register as Talent or Support our Cause and donate to this Initiative.</p>
+				<a href="#register" class="btn rounded-lg variant-outline-primary mt-4">Participant Registration</a>
+				<!-- <a href="/en/donations" class="btn rounded-lg variant-filled-primary mt-4">Donate</a> -->
+			</div>
+		</div>
+	</div>
+
+	<section class="bg-cover bg-center w-full" style={"background-image: url('https://source.unsplash.com/random?" + ( initiative?.data.tags ? initiative.data.tags.join('%20') : "Stage%20performance") + "');"}>
+		<div class="bg-white/90 dark:bg-black/75 landscape:p-8 portrait:p-4 landscape:pt-16">
+
+			<div class="mx-auto flex portrait:flex-col gap-8">
+				<div class="landscape:w-2/3 text-lg mb-8">
+					{initiative?.data.subtitle &&
+					<h3 class="landscape:md:hidden text-red-600 unstyled drop-shadow text-md xl:text-lg font-bold" >{initiative?.data.subtitle}</h3>
+					}
+					<h2 class="landscape:md:hidden marker text-primary-900-50 mb-8 unstyled drop-shadow landscape:text-4xl portrait:text-3xl font-bold" >{project?.data?.title + " - " + initiative.data?.title}</h2>
+					<input id="read-more" type="checkbox" class="peer/read hidden" />
+					<div class="overflow-hidden landscape:h-[25vh] portrait:h-24 peer-checked/read:h-auto prose max-w-none prose-stone space-y-6 prose-table:table-auto prose-p:text-lg prose-p:text-primary-900-50-token prose-headings:text-primary-900-50-toke mb-4">
+						<Content />
+					</div>
+
+					<label for="read-more" class="hidden peer-checked/read:block btn rounded-lg variant-filled-primary max-w-md mx-auto">Read less</label>
+					<label for="read-more" class="block peer-checked/read:hidden btn rounded-lg variant-filled-primary max-w-md mx-auto">Read more</label>
+
+					<div class="aspect-square w-full" style="background: transparent center / 50% 50% no-repeat url('/images/svg/tail-spin.svg');" >
+						<Lightbox enableCloseButton="false" enableClickToClose="true" client:only="svelte">
+							<Image class="mx-auto my-8" src="/uploads/initiatives/enyimba-aba-2024-talent-hunt.jpg" alt="Enyimba~Aba 2024 Talent Hunt" width={707} height={1000} />
+						</Lightbox>
+					</div>
+
+					<h2 id="register" class="text-primary-900-50 my-8 unstyled drop-shadow landscape:text-4xl portrait:text-3xl font-bold" >Participant Registration Form</h2>
+					<FormDiscoverMeParticipants />
+				</div>
+
+				<div class="sidebar flex flex-col gap-4 landscape:w-1/3">
+					<p class="-mb-3 font-black">Project { lang == "en" ? "Initiator" : "Initiatiefnemer"}</p>
+					{partners && partners?.map(initiator => (
+						<div class="card variant-ghost-primary card-hover overflow-hidden w-full">
+						<div class="listbox-item cursor-pointer -outline-offset-[3px] rounded-token px-4 py-2 variant-filled-primary " data-testid="listbox-item" role="option" aria-selected="true" tabindex="0">
+							<div class="h-0 w-0 overflow-hidden">
+								<input type="radio" name="people" value="[object Object]" tabindex="-1"></div>
+								<div class="listbox-label flex items-center space-x-4"><div class="listbox-label-lead">
+									<figure class="avatar flex aspect-square text-surface-50 font-semibold justify-center items-center overflow-hidden isolate bg-surface-400-500-token w-12 rounded-full" data-testid="avatar">
+										<Image height={48} width={48} class="avatar-image w-full h-full object-cover" src={initiator.data?.image} alt={initiator.data?.name + "'s Avatar"}>
+									</figure>
+								</div>
+								<div class="listbox-label-content flex-1 ">
+									{initiator.data?.name} ({initiator.data?.type})
+								</div>
+							</div>
+						</div>
+					</div>
+					))}
+					<p class="-mb-3 font-black">Project Media</p>
+					<div class="aspect-auto">
+						<section class="flex flex-col gap-2">
+							<h4 class="text-red-600 unstyled drop-shadow text-sm xl:text-md font-bold mt-4">Nancy V. invites you to Aba!</h4>
+							<Lightbox enableCloseButton="false" enableClickToClose="true" client:only="svelte">
+								<div class="aspect-[9/16] w-full bg-black">
+									<iframe class="w-full h-full" id="ytplayer" type="text/html"
+									src="https://www.youtube.com/embed/-0CbJFT4JWs?autoplay=0&origin=https://igborestoration.org/ohia-restoration/"
+									allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+									allowfullscreen>
+									</iframe>
+								</div>
+							</Lightbox>
+
+
+						</section>
+					</div>
+
+				</div>
+			</div>
+		</div>
+	</section>
+
+	<section class="bg-purple-900 py-8">
+  		<h2 class="unstyled title marker text-white text-5xl m-8">DiscoverMe Participants</h2>
+		<Artists />
+	</section>
+
+
+</BaseLayout>

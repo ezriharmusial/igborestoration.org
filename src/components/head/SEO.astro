@@ -1,0 +1,78 @@
+---
+import { SITE_DESCRIPTION, SITE_TITLE } from '~consts';
+
+export interface Props {
+	title: string;
+	subTitle: string;
+	seoTitle?: string;
+	description: string;
+	image?: string;
+	imageAlt?: string;
+	fbappid?: string;
+}
+
+const { title, subTitle, seoTitle, description, image, imageAlt, fbappid } = Astro.props
+const { lang } = Astro.params
+
+// Catch Image Url Inconsistencies
+function imageUrl(image) {
+	if (image) {
+		// console.log('image', image)
+		return "https://igborestoration.org" + image
+	}
+	else {
+		return "https://igborestoration.org" + "/sharing.jpg"
+	}
+	return true;
+}
+
+const canonicalURL = "https://igborestoration.org" + Astro.url.pathname;
+
+---
+<link rel="preload" as="image" href={imageUrl(image)}>
+
+<!-- Global Metadata -->
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1" />
+<meta name="generator" content={Astro.generator} />
+<meta name="HandheldFriendly" content="true">
+<meta name="author" content="Igbo Restoration" />
+<title>{SITE_TITLE + (seoTitle || title) || "Welcome to igborestoration.org"}</title>
+<meta name="robots" content="index,follow">
+<meta name="description" content={description || SITE_DESCRIPTION}>
+<!-- Facebook OpenGraph -->
+<meta property="fb:app_id" content={fbappid}/>
+<meta property="og:title" content={(seoTitle || title) || "Welcome to igborestoration.org"}>
+<meta property="og:description" content={description || subTitle || SITE_DESCRIPTION}>
+<meta property="og:url" content={canonicalURL}>
+<meta property="og:type" content="website">
+<meta property="og:image" content={imageUrl(image)}>
+<meta property="og:locale" content={"en_EN"}>
+<meta property="og:site_name" content="igborestoration.org">
+<link rel="canonical" href={canonicalURL}>
+<!-- Twitter -->
+<meta property="twitter:card" content="summary_large_image">
+<meta property="twitter:site" content="@">
+<meta property="twitter:title" content={seoTitle || title || "Welcome to igborestoration.org"}>
+<meta property="twitter:description" content={description || subTitle || "Welcome to igborestoration.org"}>
+<meta property="twitter:image" content={imageUrl(image)}>
+
+<!-- <meta name="Description" content={description}> -->
+<meta name="author" content="Igbo Restoration">
+<!-- Telephone format detection -->
+<meta name="format-detection" content="telephone=no">
+<!-- Title -->
+<meta name="apple-mobile-web-app-title" content="Igbo Restoration">
+<meta name="application-name" content="ArtKids">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="HandheldFriendly" content="true">
+<meta name="mobile-web-app-capable" content="yes">
+<meta name="MobileOptimized" content="width">
+
+<span slot="ExtendedHeader">
+	<!-- SEO section -->
+	<link itemprop="thumbnailUrl" href={imageUrl(image)}>
+	<span class="hidden" itemprop="thumbnail" itemscope itemtype="http://schema.org/ImageObject">
+		<link itemprop="url" href={imageUrl(image)}>
+	</span>
+</span>
