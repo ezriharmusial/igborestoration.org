@@ -7,10 +7,10 @@ import BaseLayout from "~layouts/BaseLayout.astro";
     <section id="share-linkcast" class="aspect-video bg-cover bg-center w-full min-h-screen flex justify-center items-center pb-4 bg-black/80" style="background-image: url('https://source.unsplash.com/random?igbo');">
         <div class="h-full">
             <!--Nav-->
-            <div class="w-full container mx-auto">
-                <div class="w-full flex items-center justify-between">
-                    <a class="flex items-center text-red-400 drop-shadow-md no-underline hover:no-underline font-bold text-2xl lg:text-4xl" href="#">
-                        Igbo<span class="bg-clip-text text-transparent bg-gradient-to-r from-red-400 via-red-600 to-red-700"> Restoration</span><span class="text-white">.org</span>
+            <div class="w-full mx-auto">
+                <div class="w-full flex items-center justify-between backdrop-brightness-50 backdrop-blur px-8">
+                    <a class="flex items-center text-red-300 drop-shadow-md no-underline hover:no-underline font-bold text-2xl lg:text-4xl" href="#">
+                        Igbo<span class="bg-clip-text text-transparent bg-gradient-to-r from-red-300 via-red-400 to-red-500"> Restoration</span><span class="text-white">.org</span>
                     </a>
 
                     <div class="flex w-1/2 justify-end content-center">
@@ -34,15 +34,15 @@ import BaseLayout from "~layouts/BaseLayout.astro";
         </div>
 
         <!--Main-->
-        <div class="container pt-24 md:pt-36 mx-auto flex flex-wrap flex-col md:flex-row items-center">
+        <div class="container p-8 pt-24 md:pt-36 mx-auto flex flex-wrap flex-col portrait:flex-col-reverse landscape:md:flex-row gap-8 items-center">
             <!--Left Col-->
-            <div class="flex flex-col landscape:w-full landscape:xl:w-2/5 justify-center lg:items-start overflow-y-hidden bg-black/40 p-8 m-8 portrait:m-4 rounded-md">
+            <div class="flex flex-col landscape:w-full landscape:xl:w-2/5 justify-center lg:items-start overflow-y-hidden backdrop-brightness-50 backdrop-blur p-8 rounded-md">
                 <h1 class="my-4 text-3xl md:text-5xl text-white drop-shadow-sm font-bold leading-tight text-center md:text-left">
                     Nnọọ!
-                    <span class="bg-clip-text text-transparent bg-gradient-to-r from-red-400 via-red-600 to-red-700">
+                    <span class="bg-clip-text text-transparent bg-gradient-to-r from-red-300 via-red-400 to-red-500">
                         Igbo Restoration
                     </span>
-                    website is under construction!
+                    website is launched!
                 </h1>
                 <p class="leading-normal text-white md:text-2xl mb-8 text-center md:text-left">
                     Want to stay updated? Please sign in for our newsletter or join our <a class="text-lime-300" title="Join our Whatsapp Group" href="https://chat.whatsapp.com/DZoimK4izJDAV9dZpPy2Qz">Whatsapp Group IRI</a>!
@@ -56,8 +56,16 @@ import BaseLayout from "~layouts/BaseLayout.astro";
                         <input
                         class="shadow appearance-none border rounded w-full p-3 text-gray-700 leading-tight focus:ring transform transition hover:scale-105 duration-300 ease-in-out"
                         id="emailaddress"
-                        type="text"
+                        name="emailaddress"
+                        type="email"
                         placeholder="you@somewhere.com"
+                        />
+                        <input
+                        class="shadow appearance-none border rounded w-full p-3 text-gray-700 leading-tight focus:ring transform transition hover:scale-105 duration-300 ease-in-out hidden"
+                        id="field-of-expertise"
+                        name="field-of-expertise"
+                        type="text"
+                        placeholder="your occupation"
                         />
                     </div>
 
