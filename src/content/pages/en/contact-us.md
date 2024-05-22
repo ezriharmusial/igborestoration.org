@@ -7,6 +7,7 @@ title: "Contact Us"
 subtitle: ""
 author: ezzyharmless
 date: "2017-10-01 19:11:52"
+category: "Organization"
 status: "published"
 tags: []
 ---

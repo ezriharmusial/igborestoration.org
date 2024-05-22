@@ -7,7 +7,7 @@ title: Water Rituals
 image: https://source.unsplash.com/random?water%20africa
 tags:
   - restoration
-icon: water
+icon: waves
 pack: mdi
 layout: ../../../layouts/page.astro
 ---
