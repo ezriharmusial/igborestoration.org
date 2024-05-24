@@ -31,7 +31,7 @@ let site = "https://igborestoration.org"
         <div class="navbar flex items-center justify-between px-4">
             <a class="flex items-center text-red-400 drop-shadow-md no-underline hover:no-underline font-bold text-2xl lg:text-4xl" href="/">
                 <img class="w-14 aspect-auto mr-2" alt="Igbo Cap" src="/images/igbocap.png" />
-                <span class="landscape:hidden landscape:xs:block">
+                <span class="landscape:hidden portrait:flex landscape:sm:flex flex-nowrap text-nowrap">
                 Igbo<span class="bg-clip-text text-transparent bg-gradient-to-r from-red-400 via-red-500 to-red-600"> Restoration</span><span class="text-black hidden landscape:md:block">.org</span>
                 </span>
             </a>
@@ -42,8 +42,8 @@ let site = "https://igborestoration.org"
             </label>
         </div>
     </div>
-    <div id="navbar-image-and-text-2" class="hs-collapse hidden overflow-hidden transition-all duration-300 basis-full grow landscape:block portrait:mb-4">
-        <div class="flex flex-col gap-5 mt-5 landscape:flex-row landscape:items-center landscape:justify-end landscape:mt-0 landscape:ps-5">
+    <div id="navbar-image-and-text-2" class="hs-collapse hidden overflow-hidden transition-all duration-300 basis-full grow landscape:block portrait:mb-4 landscape:pr-4">
+        <div class="flex flex-col gap-2 mt-5 landscape:flex-row landscape:items-center landscape:justify-end landscape:mt-0 landscape:ps-5">
             <div class="tab">
 
                 <input type="checkbox" name="category-tabs" class="hidden" id="information">
@@ -64,7 +64,7 @@ let site = "https://igborestoration.org"
             </div>
             {pageList && pageList.filter(page => page.data?.status == 'published' && !page.data?.parent && page.data?.category == 'Organization' && getLangFromId(page) == lang ).map(page => (
 
-            <a href={"/" + page.slug} class={"font-medium text-gray-600 hover:text-gray-400 dark:text-neutral-400 dark:hover:text-neutral-500 px-2 " + page.slug.split('/')[0]}>
+            <a href={"/" + page.slug} class={"font-medium text-gray-600 hover:text-gray-400 dark:text-neutral-400 dark:hover:text-neutral-500 portrait:pl-2 " + page.slug.split('/')[0]}>
                 <span class="flex flex-row justify-start items-center text-md">
                     <Icon pack={page.data.pack || "teenyicons"} name={page.data.icon || "anchor-solid"} class={size} />
                     { page.data?.shortTitle ?
