@@ -7,8 +7,8 @@ title: Oha na Eze
 image: https://source.unsplash.com/random?crowns
 tags:
   - restoration
-icon: crown
+icon: crown-circle
 pack: mdi
-layout: ../../../layouts/page.astro
+layout: ../../../layouts/Page.astro
 ---
 🏗️ Under Construction 🚧

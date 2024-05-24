@@ -7,8 +7,8 @@ title: Herbs
 image: https://source.unsplash.com/random?herbs
 tags:
   - restoration
-icon: plant
+icon: cannabis
 pack: mdi
-layout: ../../../layouts/page.astro
+layout: ../../../layouts/Page.astro
 ---
 🏗️ Under Construction 🚧

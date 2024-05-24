@@ -2,17 +2,17 @@
 import { getCollection } from 'astro:content'
 import { getLangFromUrl, useTranslations, getLangFromId } from '~content/i18n/utils';
 import { Icon } from 'astro-icon'
+import FooterTabbedList from './FooterTabbedList.astro';
 
 const pageList = await getCollection('pages');
 const projectList = await getCollection('projects');
 const {size = "h-6 w-6 p-1"} = Astro.props
-
 const lang = getLangFromUrl(Astro.url);
 const t = useTranslations(lang);
 
 ---
 <div>
-    <h6 class="mt-4 mb-2 flex justify-center font-semibold uppercase md:justify-start">
+    <h6 class="my-2  flex justify-center font-semibold uppercase md:justify-start">
         <Icon pack="octicon" name="organization-16" class={size} />
         <span>
             {t('nav.organization')}
@@ -36,63 +36,46 @@ const t = useTranslations(lang);
         </a>
     </p>
     ))}
-    <h6 class="mt-4 mb-2 flex justify-center font-semibold uppercase md:justify-start">
+    <h6 class="my-2  flex justify-center font-semibold uppercase md:justify-start">
         <Icon pack="bytesize" name="portfolio" class={size} />
         <span>
             {t('nav.projects')}
         </span>
     </h6>
     {projectList && projectList.filter(project => getLangFromId(project) == lang).map(project => (
-        <p class="mb-2">
-            <a href={"/" + project.slug.split('/')[1]} class={"text-gray-700 transition hover:opacity-75 no-underline " + project.slug.split('/')[0]}>
-                <span class="flex flex-row justify-center landscape:justify-start items-center">
-                    <Icon pack={project.data.pack || "teenyicons"} name={project.data.icon || "anchor-solid"} class={size + ""} />
-                    { project.data?.shortTitle ?
-                        <span>
-                            {project.data.shortTitle}
-                        </span>
-                        :
-                        <span>
-                            {project.data.title}
-                        </span>
-                    }
-                </span>
-            </a>
-        </p>
-    ))}
-</div>
-<!-- Useful links section -->
-<div>
-    <h6 class="mt-4 mb-2 flex justify-center font-semibold uppercase md:justify-start">
-        <Icon pack="bytesize" name="portfolio" class={size} />
-        <span>
-            {t('nav.information')}
-        </span>
-    </h6>
-    {pageList && pageList.filter(page => page.data?.status == 'published' && !page.data?.parent && page.data?.category != "Organization" && getLangFromId(page) == lang ).map(page => (
     <p class="mb-2">
-        <a href={"/" + page.slug} class={"text-gray-700 transition hover:opacity-75 no-underline " + page.slug.split('/')[0]}>
+        <a href={"/" + project.slug.split('/')[1]} class={"text-gray-700 transition hover:opacity-75 no-underline " + project.slug.split('/')[0]}>
             <span class="flex flex-row justify-center landscape:justify-start items-center">
-                <Icon pack={page.data.pack || "teenyicons"} name={page.data.icon || "anchor-solid"} class={size} />
-                { page.data?.shortTitle ?
+                <Icon pack={project.data.pack || "teenyicons"} name={project.data.icon || "anchor-solid"} class={size + ""} />
+                { project.data?.shortTitle ?
                     <span>
-                        {page.data.shortTitle}
+                        {project.data.shortTitle}
                     </span>
                     :
                     <span>
-                        {page.data.title}
+                        {project.data.title}
                     </span>
                 }
             </span>
         </a>
     </p>
     ))}
-
+</div>
+<!-- Useful links section -->
+<div>
+    <h6 class="my-2  flex justify-center font-semibold uppercase md:justify-start">
+        <Icon pack="mdi" name="library" class={size} />
+        <span>
+            {t('nav.information')}
+        </span>
+    </h6>
+    <FooterTabbedList />
 </div>
 
-    <style lang="scss" is:global>
-        html.nl a.en,
-        html.en a.nl {
-            display: none;
-        }
-    </style>
+
+<style lang="scss" is:global>
+    html.nl a.en,
+    html.en a.nl {
+        display: none;
+    }
+</style>

@@ -7,8 +7,8 @@ title: Music
 image: https://source.unsplash.com/random?african%20drum
 tags:
   - restoration
-icon: notes
+icon: music
 pack: mdi
-layout: ../../../layouts/page.astro
+layout: ../../../layouts/Page.astro
 ---
 🏗️ Under Construction 🚧

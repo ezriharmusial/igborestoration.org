@@ -7,8 +7,8 @@ title: Eze/Lolo
 image: https://source.unsplash.com/random?throne
 tags:
   - restoration
-icon: crown-circle
+icon: chess-queen
 pack: mdi
-layout: ../../../layouts/page.astro
+layout: ../../../layouts/Page.astro
 ---
 🏗️ Under Construction 🚧

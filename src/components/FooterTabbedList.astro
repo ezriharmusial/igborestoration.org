@@ -1,0 +1,97 @@
+---
+import { getCollection } from 'astro:content'
+import { getLangFromUrl, useTranslations, getLangFromId } from '~content/i18n/utils';
+import { Icon } from 'astro-icon'
+
+const pageList = await getCollection('pages');
+const {size = "h-6 w-6 p-1"} = Astro.props
+const sortedPageList = pageList.reduce(
+(categories,page) => {
+    if(!categories[page.data?.category]) categories[page.data?.category] = [];
+    categories[page.data?.category].push(page);
+    return categories
+},{}
+)
+console.log('sorted', Object.keys(sortedPageList))
+const lang = getLangFromUrl(Astro.url);
+const t = useTranslations(lang);
+
+---
+    {sortedPageList && Object.keys(sortedPageList).filter(category => category != "Organization").map(category => (
+    <div class="tab">
+        <input type="radio" name="footer-category-tabs" id={"footer-" + category}>
+        <label for={"footer-" + category} class="tab__label"><h5 class="my-2 text-black/50">{category}</h5></label>
+        <div class="tab__content">
+            {pageList && pageList.filter(page => page.data?.status == 'published' && !page.data?.parent && page.data?.category == category && getLangFromId(page) == lang ).map(page => (
+            <p class="mb-2">
+                <a href={"/" + page.slug} class={"text-gray-700 transition hover:opacity-75 no-underline " + page.slug.split('/')[0]}>
+                    <span class="flex flex-row justify-center landscape:justify-start items-center">
+                        <Icon pack={page.data.pack || "teenyicons"} name={page.data.icon || "anchor-solid"} class={size} />
+                        { page.data?.shortTitle ?
+                            <span>
+                                {page.data.shortTitle}
+                            </span>
+                            :
+                            <span>
+                                {page.data.title}
+                            </span>
+                        }
+                    </span>
+                </a>
+            </p>
+            ))}
+        </div>
+    </div>
+    ))}
+
+
+<style lang="scss">
+    .tab input {
+        position: absolute;
+        opacity: 0;
+        z-index: -1;
+    }
+
+    .tab__content {
+        max-height: 0;
+        overflow: hidden;
+        transition: all 0.35s ease-in-out;
+    }
+    .tab input:checked ~ .tab__content {
+        max-height: 30rem;
+    }
+    .tab__label,
+    .tab__close {
+        display: flex;
+        cursor: pointer;
+    }
+    .tab__label {
+        justify-content: start;
+        align-items: center;
+        gap: 0.75rem;
+    }
+    .tab__label::after {
+        content: "\276F";
+        width: 1em;
+        height: 1em;
+        text-align: center;
+        transform: rotate(90deg);
+        transition: all 0.35s;
+        color: red
+    }
+    .tab input:checked + .tab__label::after {
+        transform: scaleX(-1);
+        translate: 0 0.175rem;
+    }
+    .tab input:not(:checked) + .tab__label:hover::after {
+        animation: bounce .5s infinite;
+    }
+    @keyframes bounce {
+        25% {
+            transform: rotate(90deg) translate(.25rem);
+        }
+        75% {
+            transform: rotate(90deg) translate(-.25rem);
+        }
+    }
+</style>

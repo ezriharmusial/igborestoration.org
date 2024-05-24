@@ -8,8 +8,8 @@ subtitle: Onwa
 image: https://source.unsplash.com/random?moon
 tags:
   - restoration
-icon: globe
+icon: moon-waning-crescent
 pack: mdi
-layout: ../../../layouts/page.astro
+layout: ../../../layouts/Page.astro
 ---
 🏗️ Under Construction 🚧

@@ -1,0 +1,150 @@
+---
+import { getCollection } from 'astro:content'
+import { getLangFromUrl, useTranslations, getLangFromId } from '~content/i18n/utils';
+import { Icon } from 'astro-icon'
+
+const pageList = await getCollection('pages');
+const {size = "h-6 w-6 p-1"} = Astro.props
+const sortedPageList = pageList.reduce(
+(categories,page) => {
+    if(!categories[page.data?.category]) categories[page.data?.category] = [];
+    categories[page.data?.category].push(page);
+    return categories
+},{}
+)
+console.log('sorted', Object.keys(sortedPageList))
+const lang = getLangFromUrl(Astro.url);
+const t = useTranslations(lang);
+
+---
+    <div class="tablist">
+
+    {sortedPageList && Object.keys(sortedPageList).filter(category => category != "Organization").map(category => (
+    <div class="tab">
+        <input type="radio" name="nav-category-tabs" id={"nav-" + category}>
+        <label for={"nav-" + category} class="tab__label"><h5 class="my-2 text-black/50">{category}</h5></label>
+        <div class="tab__content">
+            {pageList && pageList.filter(page => page.data?.status == 'published' && !page.data?.parent && page.data?.category == category && getLangFromId(page) == lang ).map(page => (
+            <p class="mb-2">
+                <a href={"/" + page.slug} class={"text-gray-700 transition hover:opacity-75 no-underline " + page.slug.split('/')[0]}>
+                    <span class="flex flex-row justify-center landscape:justify-start items-center">
+                        <Icon pack={page.data.pack || "teenyicons"} name={page.data.icon || "anchor-solid"} class={size} />
+                        { page.data?.shortTitle ?
+                            <span>
+                                {page.data.shortTitle}
+                            </span>
+                            :
+                            <span>
+                                {page.data.title}
+                            </span>
+                        }
+                    </span>
+                </a>
+            </p>
+            ))}
+        </div>
+    </div>
+    ))}
+    </div>
+
+
+<style lang="scss" >
+
+    .tab input {
+        position: absolute;
+        opacity: 0;
+        z-index: -1;
+    }
+
+    .tab__label,
+    .tab__close {
+        display: flex;
+        cursor: pointer;
+        align-items: center;
+        gap: 0.5rem;
+        position: relative;
+    }
+
+    .tab__label::after {
+        content: "\276F";
+        width: 1em;
+        height: 1em;
+        text-align: center;
+        transform: rotate(90deg);
+        transition: transform 0.35s;
+        color: red
+    }
+
+    .tab__content {
+        max-height: 0;
+        overflow: hidden;
+        transition: all 0.35s ease-in-out;
+    }
+
+    .tab input:checked + .tab__label::after {
+        transform: scaleY(-1);
+        translate: 0 0.175rem;
+    }
+
+    .tab input:not(:checked) + .tab__label:hover::after {
+        animation: bounce .5s infinite;
+    }
+
+    @keyframes bounce {
+        25% {
+            transform: rotate(90deg) translate(.25rem);
+        }
+        75% {
+            transform: rotate(90deg) translate(-.25rem);
+        }
+    }
+
+    @media (orientation: landscape) {
+        .tablist {
+            position: absolute;
+            top: 3.25rem;
+            left: 0;
+            width:100%;
+            min-width: 100vw;
+            overflow-x: auto;
+            height: 6rem;
+            display:flex;
+            gap: 2rem;
+            flex-wrap: nowrap;
+            white-space: nowrap;
+            padding: 0.5rem 1rem;
+            z-index:10;
+            background-color: #feee;
+            backdrop-filter: blur(4px);
+        }
+        .tab__content {
+            position: absolute;
+            z-index: 10;
+            height: 100%;
+            width: 100%;
+            display:flex;
+            flex-wrap: nowrap;
+            top: 3.25rem;
+            left: 0;
+            gap: 1.5rem;
+            padding: 0.5rem 1rem;
+            opacity: 0;
+        }
+        .tab input:checked ~ .tab__content {
+            max-height: 3rem;
+            opacity: 1;
+        }
+   }
+
+    @media (orientation: portrait) {
+        .tab input:checked ~ .tab__content {
+            max-height: 30rem;
+        }
+        .tab__label {
+            justify-content: start;
+            align-items: center;
+            gap: 0.75rem;
+        }
+
+    }
+</style>

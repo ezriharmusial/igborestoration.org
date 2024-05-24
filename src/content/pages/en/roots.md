@@ -7,8 +7,8 @@ title: Roots
 image: https://source.unsplash.com/random?roots
 tags:
   - restoration
-icon: plant
+icon: shovel
 pack: mdi
-layout: ../../../layouts/page.astro
+layout: ../../../layouts/Page.astro
 ---
 🏗️ Under Construction 🚧

@@ -7,8 +7,8 @@ title: Food
 image: https://source.unsplash.com/random?jollof
 tags:
   - restoration
-icon: farm
+icon: peanut
 pack: mdi
-layout: ../../../layouts/page.astro
+layout: ../../../layouts/Page.astro
 ---
 🏗️ Under Construction 🚧

@@ -7,8 +7,8 @@ title: Nze
 image: https://source.unsplash.com/random?wind
 tags:
   - restoration
-icon: crown
+icon: feather
 pack: mdi
-layout: ../../../layouts/page.astro
+layout: ../../../layouts/Page.astro
 ---
 🏗️ Under Construction 🚧

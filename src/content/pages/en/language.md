@@ -7,8 +7,8 @@ title: Language
 image: https://source.unsplash.com/random?nsibidi
 tags:
   - restoration
-icon: language
+icon: translate
 pack: mdi
-layout: ../../../layouts/page.astro
+layout: ../../../layouts/Page.astro
 ---
 🏗️ Under Construction 🚧

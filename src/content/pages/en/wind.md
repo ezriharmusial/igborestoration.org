@@ -10,6 +10,6 @@ tags:
   - restoration
 icon: weather-windy-variant
 pack: mdi
-layout: ../../../layouts/page.astro
+layout: ../../../layouts/Page.astro
 ---
 🏗️ Under Construction 🚧

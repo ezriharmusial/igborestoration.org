@@ -8,8 +8,8 @@ subtitle: Nne'Ala
 image: https://source.unsplash.com/random?red%20mud
 tags:
   - restoration
-icon: globe
+icon: earth
 pack: mdi
-layout: ../../../layouts/page.astro
+layout: ../../../layouts/Page.astro
 ---
 🏗️ Under Construction 🚧

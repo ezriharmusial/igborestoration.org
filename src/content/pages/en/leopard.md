@@ -9,6 +9,6 @@ tags:
   - restoration
 icon: cat
 pack: mdi
-layout: ../../../layouts/page.astro
+layout: ../../../layouts/Page.astro
 ---
 🏗️ Under Construction 🚧

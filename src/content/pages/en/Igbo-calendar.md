@@ -8,8 +8,8 @@ subtitle: Nne'Ala
 image: https://source.unsplash.com/random?lunar%20calendar
 tags:
   - restoration
-icon: globe
+icon: theme-light-dark
 pack: mdi
-layout: ../../../layouts/page.astro
+layout: ../../../layouts/Page.astro
 ---
 🏗️ Under Construction 🚧
