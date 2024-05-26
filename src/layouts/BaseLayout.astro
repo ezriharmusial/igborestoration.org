@@ -1,5 +1,6 @@
 ---
 import '@styles/theme.postcss';
+import '@skeletonlabs/skeleton/styles/all.css'
 import '@styles/app.postcss';
 
 import { getLangFromUrl } from '~content/i18n/utils';
@@ -51,6 +52,7 @@ const { title, icon, pack, seoTitle, shortTitle, description, image, imageAlt, f
         body.classList.toggle('loaded');
     </script>
     <!-- Netlify Identity -->
+    <script is:inline src="./assets/vendor/preline/preline.js"></script>
     <script is:inline src="https://identity.netlify.com/v1/netlify-identity-widget.js"></script>
 </body>
 </html>

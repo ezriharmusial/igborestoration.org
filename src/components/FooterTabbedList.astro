@@ -12,7 +12,6 @@ const sortedPageList = pageList.reduce(
     return categories
 },{}
 )
-console.log('sorted', Object.keys(sortedPageList))
 const lang = getLangFromUrl(Astro.url);
 const t = useTranslations(lang);
 
