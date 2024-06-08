@@ -4,4 +4,4 @@
   publish = "dist"
 
 [functions]
-    external_node_modules = ["svgo", "astro"]
+    external_node_modules = ["svgo", "astro", "gun"]
