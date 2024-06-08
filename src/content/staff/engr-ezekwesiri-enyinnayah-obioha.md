@@ -6,7 +6,7 @@ name: "Engr. Ezekwesiri Enyinnayah Obioha "
 function: boardmember
 bgimage: /images/contacts/Ezehk-2.jpg
 image: /images/contacts/Ezehk-1-7090-150x150.jpg
-title: CEO / Managing Director
+title: GMD / Managing Director
 contact:
   telephone: "+2349160602716"
   email: info@igborestoration.org
@@ -18,7 +18,7 @@ Since after the announcement of my resignation as the MD of ArtKids Africa, I ha
 
 Few of such ongoing Projects include:
 
-* Ohia Stream Restoration Project at Owerre-Nkworji in Imo State 
+* Ohia Stream Restoration Project at Owerre-Nkworji in Imo State
 * DiscoverMe Musical Event at Etche Road Stadium Aba (Enyimba City) on the 2nd of June 2024.
 * African Idol  December 2024 at Abuja
 * ComputerABCD (Technology sensitisation and digitisation project)~Abia, Imo, Enugu, Ebony and Anambra States 2025.

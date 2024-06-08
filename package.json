@@ -24,6 +24,8 @@
     "astro-purgecss": "^2.0.1",
     "astro-useragent": "^2.0.0",
     "astro-webmanifest": "^0.6.0",
+    "gun": "^0.2020.1240",
+    "javascript-time-ago": "^2.5.10",
     "preline": "^2.3.0",
     "sass": "^1.62.1",
     "svelte": "^3.59.1",

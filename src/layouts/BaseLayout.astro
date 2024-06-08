@@ -11,6 +11,8 @@ import SEO from '../components/head/SEO.astro';
 import seoSettings from '../content/settings/_seo.yml';
 import siteSettings from '../content/settings/_settings.yml';
 import Nav from '~components/ux/Nav.astro';
+import Comments from "~components/chat/Comments.svelte";
+import UserDialogue from "~components/chat/UserDialogue.svelte";
 import Share from "~components/ux/Share.astro";
 import Footer from "~components/Footer.astro";
 
@@ -24,13 +26,13 @@ export interface Props {
 
 const { theme, mode } = siteSettings
 const { fbappid } = seoSettings
-const { title, icon, pack, seoTitle, shortTitle, description, image, imageAlt, fullscreen = false } = (Astro.props?.data || Astro.props)
+const { title, seoTitle, description, image, imageAlt, comments = true } = (Astro.props?.data || Astro.props)
 ---
 
 <!DOCTYPE html>
 <html class={mode + " " + lang } lang={lang}>
 <head>
-    <link rel="preload" as="image" href="/logo-512.png">
+    <link rel="preload" as="image" href="/images/igbocap.png">
     <!-- Fonts -->
     <Fonts />
     <!-- Site Meta & SEO -->
@@ -42,9 +44,12 @@ const { title, icon, pack, seoTitle, shortTitle, description, image, imageAlt, f
 
     <!--Nav-->
     <Nav />
+    <UserDialogue client:load="svelte"/>
     <!--Main-->
     <slot />
-
+    {comments &&
+        <Comments client:load="svelte"/>
+    }
     <Share />
     <Footer />
     <script is:inline>

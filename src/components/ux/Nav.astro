@@ -4,6 +4,8 @@ import { getLangFromUrl, useTranslations, getLangFromId } from '~content/i18n/ut
 import { Icon } from 'astro-icon'
 import NavTabbedList from '~components/NavTabbedList.astro';
 import FooterTabbedList from '~components/FooterTabbedList.astro';
+import ChatLogButton from "~components/chat/ChatLogButton.svelte";
+import Brand from '~components/ui/Brand.astro';
 
 const pageList = await getCollection('pages');
 const lang = getLangFromUrl(Astro.url);
@@ -25,15 +27,12 @@ let site = "https://igborestoration.org"
     </div>
 </div> -->
 
-<header class="fixed top-0 z-10 flex flex-wrap landscape:justify-start landscape:flex-nowrap w-full backdrop-blur backdrop-brightness-150 bg-white/90 text-sm dark:bg-neutral-800/90 dark:backdrop-brightness-50">
+<header class="fixed top-0 z-20 flex flex-wrap landscape:justify-start landscape:flex-nowrap w-full backdrop-blur backdrop-brightness-150 bg-white/90 text-sm dark:bg-neutral-800/90 dark:backdrop-brightness-50">
     <nav class="max-w-[85rem] w-full mx-auto landscape:flex landscape:items-center landscape:justify-between" aria-label="Global">
         <input type="checkbox" id="menuToggler" class="menuToggler !hidden" />
         <div class="navbar flex items-center justify-between px-4">
-            <a class="flex items-center text-red-400 drop-shadow-md no-underline hover:no-underline font-bold text-2xl lg:text-4xl" href="/">
-                <img class="w-14 aspect-auto mr-2" alt="Igbo Cap" src="/images/igbocap.png" />
-                <span class="landscape:hidden portrait:flex landscape:sm:flex flex-nowrap text-nowrap">
-                Igbo<span class="bg-clip-text text-transparent bg-gradient-to-r from-red-400 via-red-500 to-red-600"> Restoration</span><span class="text-black hidden landscape:md:block">.org</span>
-                </span>
+            <a class="flex items-center text-red-400 drop-shadow-md !no-underline hover:no-underline font-bold text-2xl lg:text-3xl" href="/">
+                <Brand />
             </a>
 
             <label for="menuToggler" class="navbar-burger landscape:hidden hs-collapse-toggle p-2 inline-flex justify-center items-center gap-x-2 rounded-lg border border-gray-200 bg-white text-gray-800 shadow-sm hover:bg-gray-50 disabled:opacity-50 disabled:pointer-events-none dark:bg-transparent dark:border-neutral-700 dark:text-white dark:hover:bg-white/10 z-10" data-hs-collapse="#navbar-image-and-text-2" aria-controls="navbar-image-and-text-2" aria-label="Toggle navigation">
@@ -91,6 +90,9 @@ let site = "https://igborestoration.org"
                     <path d="M19 6h5V0h-5c-3.86 0-7 3.14-7 7v3H8v6h4v16h6V16h5l1-6h-6V7c0-.542.458-1 1-1z"></path>
                 </svg>
             </a>
+            <div class="portrait:mx-2">
+                <ChatLogButton client:load="svelte" />
+            </div>
         </div>
     </div>
 </nav>

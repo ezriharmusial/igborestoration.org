@@ -29,14 +29,12 @@ function imageUrl(image) {
 const canonicalURL = "https://igborestoration.org" + Astro.url.pathname;
 
 ---
-<link rel="preload" as="image" href={imageUrl(image)}>
-
 <!-- Global Metadata -->
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width,initial-scale=1" />
 <meta name="generator" content={Astro.generator} />
 <meta name="HandheldFriendly" content="true">
-<meta name="author" content="Igbo Restoration" />
+<meta name="author" content="Igbo Restoration Initiatives (IRI)" />
 <title>{SITE_TITLE + (seoTitle || title) || "Welcome to igborestoration.org"}</title>
 <meta name="robots" content="index,follow">
 <meta name="description" content={description || SITE_DESCRIPTION}>
@@ -58,11 +56,11 @@ const canonicalURL = "https://igborestoration.org" + Astro.url.pathname;
 <meta property="twitter:image" content={imageUrl(image)}>
 
 <!-- <meta name="Description" content={description}> -->
-<meta name="author" content="Igbo Restoration">
+<meta name="author" content="Igbo Restoration Initiatives (IRI)">
 <!-- Telephone format detection -->
 <meta name="format-detection" content="telephone=no">
 <!-- Title -->
-<meta name="apple-mobile-web-app-title" content="Igbo Restoration">
+<meta name="apple-mobile-web-app-title" content="Igbo Restoration Initiatives (IRI)">
 <meta name="application-name" content="IgboRestoration">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="HandheldFriendly" content="true">

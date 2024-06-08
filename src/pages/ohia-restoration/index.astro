@@ -15,7 +15,7 @@ const partners = await getCollection('partners').then(partners => partners?.filt
 
 
 ---
-<BaseLayout icon={project.data?.icon ? project.data?.icon : project?.data?.icon} pack={project.data?.pack ? project.data?.pack : project?.data?.pack} description={project.data?.seo?.imageAlt || project.data?.description} seoTitle={"Igbo Restoration - " + project?.data?.title + " - " + project.data?.title} title={project?.data?.title} shortTitle={project.data?.shortTitle ? project.data?.shortTitle : project?.data?.shortTitle} image={project.data?.image} imageAlt={project.data?.imageAlt}>
+<BaseLayout icon={project.data?.icon ? project.data?.icon : project?.data?.icon} pack={project.data?.pack ? project.data?.pack : project?.data?.pack} description={project.data?.seo?.imageAlt || project.data?.description} seoTitle={"Igbo Restoration Initiatives (IRI) - " + project?.data?.title + " - " + project.data?.title} title={project?.data?.title} shortTitle={project.data?.shortTitle ? project.data?.shortTitle : project?.data?.shortTitle} image={project.data?.image} imageAlt={project.data?.imageAlt}>
 	<!-- Section Started Heading -->
 	<div class="section section-inner started-heading relative">
 		<div class="aspect-video bg-cover bg-center w-full h-full transition-all duration-100 flex justify-start items-center bg-black/80" style={"background-image: url('" +  project.data?.image + "');"}>
